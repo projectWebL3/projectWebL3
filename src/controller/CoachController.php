@@ -29,10 +29,23 @@ class CoachController
 
     public function read(int $id)
     {
-        $coachRepository = new CoachRepository();
-        $coach = $coachRepository->get($id);
+        
+        $this->view->render('/coach/read',[
+        'coach' => $this->coachRepository->get($id)  ]);;
+        
 
-        var_dump($coach);
+    }
+
+    public function update(int $id)
+    {
+        if ('POST' === $_SERVER['REQUEST_METHOD']) {
+            $this->coachRepository->update($_POST);
+        }
+        
+        $this->view->render('/coach/update', [
+            'coach' => $this->coachRepository->get($id) ]);;
+        
+
     }
     
 }

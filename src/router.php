@@ -17,6 +17,10 @@ class Router
                   
                 return $coachController->subcribe();
                 }
+                else if ('update' === $action && isset($_GET['id'])){
+                    return $coachController->update((int) $_GET['id']);
+                    
+                }
                 else if ('read' === $action && isset($_GET['id'])){
                     return $coachController->read((int) $_GET['id']);
                     

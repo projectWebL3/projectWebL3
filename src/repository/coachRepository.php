@@ -49,9 +49,27 @@ class CoachRepository extends Database
         }
         else {
             "Echec lors de l'inscription";
-        }
-
+        } 
+    
        
+    }
+
+    public function update( array $data = [])
+    {
+        
+        $query = $this->createQuery(
+       'UPDATE coach SET prestation = :prestation WHERE id = :id',
+            ['prestation' => $data['prestation'],
+              'id' => $_GET['id'],
+            ]
+        );
+
+        if ($query){
+            echo "la modification a bien été enregistrée";
+        }
+        else {
+            "Echec lors de la modification";
+        } 
     
        
     }

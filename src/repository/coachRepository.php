@@ -24,15 +24,35 @@ class CoachRepository extends Database
         return $this->buildObject($result->fetch());
     }
 
-    public function setCoach(array $parameters = [])
+    public function subcribe(array $data = [])
     {
-        $result = $this->createQuery(
-            'INSERT INTO coach (nom,prenom,voie,codeP,Ville,mail,bio,prestation,lieu,mdp) VALUES ',
-            
-
+        $query = $this->createQuery(
+       'INSERT INTO coach (nom, prenom, nRue, voie, codeP, Ville, tel, mail, bio, prestation, lieu, mdp) VALUES (:nom, :prenom, :nRue, :voie, :codeP, :Ville, :tel, :mail, :bio, :prestation, :lieu, :mdp)',
+            [
+            'nom' => $data['nom'],
+            'prenom' => $data['prenom'],
+            'nRue' => $data['nRue'],
+            'voie' => $data['voie'],
+            'codeP' => $data['codeP'],
+            'Ville' => $data['Ville'],
+            'tel' => $data['tel'],
+            'mail' => $data['mail'],
+            'bio' => $data['bio'],
+            'prestation' => $data['prestation'],
+            'lieu' => $data['lieu'],
+            'mdp' => $data['mdp'],  
+            ]
         );
+
+        if ($query){
+            echo "Votre inscription est enregistrée";
+        }
+        else {
+            "Echec lors de l'inscription";
+        }
+
+       
     
-        return $this->buildObject($result->fetch());
        
     }
 

@@ -37,6 +37,8 @@ abstract class Database
         $result = $this->checkConnection()->prepare($sql);
         //$result->setFetchMode(\PDO::FETCH_CLASS, static::class);
         $result->execute($parameters);
+        
+    
         return $result;
     }
 

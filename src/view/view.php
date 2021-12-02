@@ -4,8 +4,8 @@ namespace App\view;
 
 class View
 {
-    private string $file;
-    private string $title = 'lol';
+    private $file;
+    private  $title = 'lol';
 
     public function render($templatePath, $data = [])
     {

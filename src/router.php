@@ -3,7 +3,7 @@
 namespace App;
 
 use App\controller\CoachController;
-
+use App\view\View;
 class Router
 {
     public function run()
@@ -12,20 +12,22 @@ class Router
             $action = $_GET['action'] ?? null;
             $route = $_GET['route'];
             if ('coach'=== $route && $action) {
+                 $coachController = new CoachController();
                 if ('create' === $action){
                   
-               //   return (new Coachcontroller())->subcribe();
+                return $coachController->subcribe();
                 }
-                else if ('read' === $action){
-                    return (new CoachController())->read((int) $_GET['id']);
+                else if ('read' === $action && isset($_GET['id'])){
+                    return $coachController->read((int) $_GET['id']);
                     
                 }
                 
             }
             else if ('client' == $route){
-                if ('read' === $action){
+                $clientController = new ClientController();
+                if ('read' === $action && isset($_GET['id']))  {
                   var_dump('client'); die;
-               //   return (new Coachcontroller())->subcribe();
+               //   return $clientController->subcribe();
                 } 
             }
 

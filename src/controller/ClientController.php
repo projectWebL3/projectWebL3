@@ -2,21 +2,53 @@
 
 namespace App\controller;
 
-use App\repository\clientRepository;
+use App\repository\ClientRepository;
+use App\View\view;
 
 class ClientController
 {
-    public function subcribe()
+    private $view;
+    private $clientRepository;
+    public function __construct()
     {
-        var_dump('Création ');
+        $this->view = new View();
+        $this->clientRepository = new ClientRepository();
     }
 
+    public function subcribe()
+    {
+        if ('POST' === $_SERVER['REQUEST_METHOD']) {
+            $this->clientRepository->subcribe($_POST);
+            
+        }
+        
+        $this->view->render('/client/subcribe');
+    }
+
+    
     public function read(int $id)
     {
-        die;
-        $clientRepository = new ClientRepository();
-        $client = $clientRepository->get($id);
+       
+        $this->view->render('/client/read',
+        ['client' => $this->clientRepository->get($id) ]);
+     
 
-        var_dump($client);
+    }
+
+    public function update(int $id)
+    {
+        if ('POST' === $_SERVER['REQUEST_METHOD']) {
+            $this->clientRepository->update($_POST);
+        }
+        
+        $this->view->render('/client/update',[
+            'client' => $this->clientRepository->get($id) ]);
+    }
+
+    public function delete(int $id)
+    {
+            $this->clientRepository->delete($id);
+
+
     }
 }

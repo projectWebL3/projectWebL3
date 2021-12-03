@@ -3,24 +3,24 @@
 namespace App\repository;
 
 use App\Database;
-use App\model\Coach;
+use App\model\Client;
 
-class CoachRepository extends Database
+class ClientRepository extends Database
 {
-    public function getCoach()
+    public function getClient()
     {
         $connection = (new Database())->getConnection();
 
-        return $connection->query('SELECT * FROM coach');
+        return $connection->query('SELECT * FROM client');
     }
 
     public function get(int $id)
     {
         $result = $this->createQuery(
-            'SELECT * FROM coach WHERE id = :id',
+            'SELECT * FROM client WHERE id = :id',
             ['id' => $id]
         );
-       
+        
     
         return $this->buildObject($result->fetch());
     }
@@ -28,22 +28,21 @@ class CoachRepository extends Database
     public function subcribe(array $data = [])
     {
         $query = $this->createQuery(
-       'INSERT INTO coach (nom, prenom, nRue, voie, codeP, Ville, tel, mail, bio, prestation, lieu, mdp) VALUES (:nom, :prenom, :nRue, :voie, :codeP, :Ville, :tel, :mail, :bio, :prestation, :lieu, :mdp)',
+       'INSERT INTO client ( nom, prenom, nRue, Ville, voie, codeP, mdp, mail) VALUES (:nom, :prenom, :nRue, :Ville, :voie, :codeP, :mdp, :mail)',
             [
             'nom' => $data['nom'],
             'prenom' => $data['prenom'],
             'nRue' => $data['nRue'],
+            'Ville' => $data['Ville'],
             'voie' => $data['voie'],
             'codeP' => $data['codeP'],
-            'Ville' => $data['Ville'],
-            'tel' => $data['tel'],
-            'mail' => $data['mail'],
-            'bio' => $data['bio'],
-            'prestation' => $data['prestation'],
-            'lieu' => $data['lieu'],
             'mdp' => $data['mdp'],  
+            'mail' => $data['mail'],
+            
             ]
         );
+
+        
 
         if ($query){
             echo "Votre inscription est enregistrée";
@@ -54,16 +53,18 @@ class CoachRepository extends Database
     
        
     }
-
+        
     public function update( array $data = [])
-    {
+    {     
         
         $query = $this->createQuery(
-       'UPDATE coach SET prestation = :prestation WHERE id = :id',
-            ['prestation' => $data['prestation'],
+       'UPDATE client SET mail = :mail WHERE id = :id',
+            ['mail' => $data['mail'],
               'id' => $_GET['id'],
             ]
         );
+
+        
 
         if ($query){
             echo "la modification a bien été enregistrée";
@@ -79,7 +80,7 @@ class CoachRepository extends Database
     {
         
         $query = $this->createQuery(
-       'DELETE FROM coach WHERE id = :id',
+       'DELETE FROM client WHERE id = :id',
             ['id' => $id]);
 
             
@@ -93,24 +94,23 @@ class CoachRepository extends Database
     
     }
 
-    private function buildObject(array $row): Coach
-    {
-        $coach = new Coach;
-        $coach->setId((int) $row['id']);
-        $coach->setNom( $row['nom']);
-        $coach->setPrenom( $row['prenom']);
-        $coach->setNrue( $row['nom']);
-        $coach->setVoie( $row['voie']);
-        $coach->setCodeP( $row['codeP']);
-        $coach->setVille( $row['Ville']);
-        $coach->setTel( $row['tel']);
-        $coach->setMail( $row['mail']);
-        $coach->setBio( $row['bio']);
-        $coach->setPrest( $row['prestation']);
-        $coach->setLieu( $row['lieu']);
-        $coach->setMdp( $row['mdp']);
 
-       
-       return $coach;
-   }
+
+private function buildObject(array $row): Client
+    {
+        $client = new Client;
+        $client->setId((int) $row['id']);
+        $client->setNom( $row['nom']);
+        $client->setPrenom( $row['prenom']);
+        $client->setNrue( $row['nRue']);
+        $client->setVoie( $row['voie']);
+        $client->setVille( $row['ville']);
+        $client->setCodeP( $row['codeP']);
+        $client->setMdp( $row['mdp']);
+        $client->setMail( $row['mail']);
+
+        
+      
+        return $client;
+    }
 }

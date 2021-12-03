@@ -31,8 +31,8 @@ class CoachController
     {
         
         $this->view->render('/coach/read',[
-        'coach' => $this->coachRepository->get($id)  ]);;
-        
+        'coach' => $this->coachRepository->get($id) ]);
+     
 
     }
 
@@ -45,6 +45,13 @@ class CoachController
         $this->view->render('/coach/update', [
             'coach' => $this->coachRepository->get($id) ]);;
         
+
+    }
+
+    public function delete(int $id)
+    {
+            $this->coachRepository->delete($id);
+
 
     }
     

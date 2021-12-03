@@ -1,7 +1,7 @@
 <?php
 
 namespace App;
-
+use App\controller\ClientController;
 use App\controller\CoachController;
 use App\view\View;
 class Router
@@ -25,19 +25,37 @@ class Router
                     return $coachController->read((int) $_GET['id']);
                     
                 }
+                else if ('delete' === $action && isset($_GET['id'])){
+                    return $coachController->delete((int) $_GET['id']);
+                    
+                }
                 
             }
             else if ('client' == $route){
                 $clientController = new ClientController();
                 if ('read' === $action && isset($_GET['id']))  {
-                  var_dump('client'); die;
-               //   return $clientController->subcribe();
+                  
+                  return $clientController->read((int) $_GET['id']);
                 } 
-            }
+                else if ('create' === $action )  {
+                  
+                    return $clientController->subcribe();
 
-        } else {
+                }
+                else if ('update' === $action && isset($_GET['id']) )  {
+              
+                    return $clientController->update((int) $_GET['id']);
+                } 
+                else if ('delete' === $action && isset($_GET['id'])){
+                    return $clientController->delete((int) $_GET['id']);
+                    
+                }
+
+            } 
+            else {
             require_once 'index.php';
+            }
         }
-    }
+     }
 }
 ?>

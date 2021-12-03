@@ -11,6 +11,7 @@ class Coach {
  private $voie;
  private $codeP;
  private $ville;
+ private $tel;
  private $mail;
  private $bio;
  private $prest;
@@ -20,51 +21,56 @@ class Coach {
 
 
 public function getNom(){
-     return this.$nom;
+     return $this->$nom;
  }
 
  public function getPrenom(){
-     return this.$prenom;
+     return $this->$prenom;
  }
 
  public function getNRue(){
-     return this.$nRue;
+     return $this->$nRue;
  }
 
  public function getVoie(){
-     return this.$voie;
+     return $this->$voie;
  }
 
  public function getCodeP(){
-     return this.$codeP;
+     return $this->$codeP;
  }
 
 
  public function getVille(){
      
-     return this.$ville;
+     return $this->$ville;
  }
 
+ public function getTel(){
+     
+    return $this->$tel;
+}
+
  public function getMail(){
-     return this.$mail;
+     return $this->$mail;
  }
 
 
  public function getBio(){
-     return this.$bio;
+     return $this->$bio;
  }
  
  public function getPrest(){
-     return this.$prest;
+     return $this->$prest;
  }
 
  public function getLieu(){
-     return this.$lieu;
+     return $this->$lieu;
  }
 
  
  public function getMdp(){
-     return this.$prest;
+     return $this->$prest;
  }
 
 
@@ -90,6 +96,11 @@ public function setCodeP($codeP){
 }
 public function setVille(  $ville) {
     $this->ville=$ville;
+    return $this;
+}
+
+public function setTel(  $tel) {
+    $this->tel=$tel;
     return $this;
 }
 public function setMail($mail){

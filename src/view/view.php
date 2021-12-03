@@ -5,7 +5,7 @@ namespace App\view;
 class View
 {
     private $file;
-    private  $title = 'lol';
+    private $title = 'lol';
 
     public function render($templatePath, $data = [])
     {
@@ -20,7 +20,7 @@ class View
         echo $view;
     }
     
-    private function renderFile(string $file, array $data = []  )
+    private function renderFile( string $file, array $data = []  )
     {
         if (file_exists($file)) {
             extract($data);

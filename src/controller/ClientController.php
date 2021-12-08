@@ -47,7 +47,13 @@ class ClientController
 
     public function delete(int $id)
     {
+            if ('POST' === $_SERVER['REQUEST_METHOD'] && $_POST['oui']) {
             $this->clientRepository->delete($id);
+        }
+        elseif('POST' === $_SERVER['REQUEST_METHOD'] && $_POST['non']){
+            $this->view->render('/home');
+        }
+           $this->view->render('/client/delete');
 
 
     }

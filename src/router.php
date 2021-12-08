@@ -6,6 +6,7 @@ use App\controller\CoachController;
 use App\view\View;
 class Router
 {
+
     public function run()
     {
         if (isset($_GET['route'])) {
@@ -53,7 +54,8 @@ class Router
 
             } 
             else {
-            require_once 'index.php';
+        $view = new View();
+        $view->render('/home');
             }
         }
      }

@@ -3,9 +3,14 @@
 <head>
     <link rel="stylesheet" href="./assets/vendor/bootstrap-grid.min.css">
     <link rel="stylesheet" href="./assets/vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="./assets/vendor/form.css">
+    <link rel="stylesheet" href="./assets/vendor/formulaire.css">
 </head>
-</head>
+
+<div class="containers ">
+
+<div class = "titre">
+  <h2 >Inscription nouveau client</h2>
+</div>
 
 <form method="post"  action="index.php?route=client&action=create">
    
@@ -55,5 +60,7 @@
   <button type="submit" class="btn btn-primary">S'inscrire</button>
 
 </form>
+
+</div>
 
 <html>

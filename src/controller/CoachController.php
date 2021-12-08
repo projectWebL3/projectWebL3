@@ -43,15 +43,23 @@ class CoachController
         }
         
         $this->view->render('/coach/update', [
-            'coach' => $this->coachRepository->get($id) ]);;
+            'coach' => $this->coachRepository->get($id) ]);
         
 
     }
 
     public function delete(int $id)
     {
+        if ('POST' === $_SERVER['REQUEST_METHOD'] && $_POST['oui']) {
             $this->coachRepository->delete($id);
+        }
+        elseif('POST' === $_SERVER['REQUEST_METHOD'] && $_POST['non']){
+            $this->view->render('/home');
+        }
+           $this->view->render('/coach/delete');
 
+        
+        
 
     }
     

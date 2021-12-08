@@ -1,2 +1,8 @@
-<?php var_dump($client) ?>
-Mon nom est <?= "nom" ?>
+<?php 
+
+use App\model\Client;
+
+var_dump($client) 
+$client = new Client;
+$client->getNom();
+?>

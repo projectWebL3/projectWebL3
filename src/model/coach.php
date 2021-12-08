@@ -17,6 +17,8 @@ class Coach {
  private $prest;
  private $lieu;
  private $mdp;
+ private $img;
+
 
 
 
@@ -68,6 +70,9 @@ public function getNom(){
      return $this->$lieu;
  }
 
+public function getImg(){
+     return $this->$img;
+ }
  
  public function getMdp(){
      return $this->$prest;
@@ -117,6 +122,11 @@ public function setPrest($prest){
 }
 public function setLieu($lieu){
     $this->lieu=$lieu;
+    return $this;
+}
+
+public function setImg($img){
+    $this->img=$img;
     return $this;
 }
 public function setMdp($mdp){

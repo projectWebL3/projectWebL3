@@ -3,13 +3,17 @@
 <head>
     <link rel="stylesheet" href="./assets/vendor/bootstrap-grid.min.css">
     <link rel="stylesheet" href="./assets/vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="./assets/vendor/form.css">
-</head>
+    <link rel="stylesheet" href="./assets/vendor/formulaire.css">
 </head>
 
-<form method="post"  action="index.php?route=coach&action=create">
-   
-       
+
+<div class="containers ">
+
+<div class = "titre">
+  <h2 >Inscription coach</h2>
+</div>
+
+<form method="post"  action="index.php?route=coach&action=create">  
     <div class="form-row">
           <div class="for-row">
             <label for="validationDefault01">Prénom</label>
@@ -61,6 +65,11 @@
       <input type="text" class="form-control" name="lieu">
     </div>
 
+    <div class="form-row">
+      <label for="inputCity">Image</label>
+      <input type="text" class="form-control" name="img">
+    </div>
+
     <label for="inputPassword5">Password</label>
 <input type="password" name="mdp" class="form-control" aria-describedby="passwordHelpBlock">
 <small id="password" class="form-text text-muted">
@@ -72,5 +81,6 @@
   <button type="submit" class="btn btn-primary">S'inscrire</button>
 
 </form>
+</div>
 
 <html>

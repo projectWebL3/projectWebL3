@@ -3,9 +3,9 @@ namespace App;
 
 abstract class Database
 {
-    const DB_HOST = 'mysql:host=localhost;dbname=coach;charset=utf8';
-    const DB_USER = 'root';
-    const DB_PASSWORD = '';
+     const DB_HOST = 'mysql:host=localhost;dbname=coach;charset=utf8';
+    const DB_USER = 'sara';
+    const DB_PASSWORD = 'arasiana';
 
     private $connection;
 

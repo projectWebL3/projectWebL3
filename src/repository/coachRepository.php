@@ -28,7 +28,7 @@ class CoachRepository extends Database
     public function subcribe(array $data = [])
     {
         $query = $this->createQuery(
-       'INSERT INTO coach (nom, prenom, nRue, voie, codeP, Ville, tel, mail, bio, prestation, lieu, mdp) VALUES (:nom, :prenom, :nRue, :voie, :codeP, :Ville, :tel, :mail, :bio, :prestation, :lieu, :mdp)',
+       'INSERT INTO coach (nom, prenom, nRue, voie, codeP, Ville, tel, mail, bio, prestation, lieu, img, mdp) VALUES (:nom, :prenom, :nRue, :voie, :codeP, :Ville, :tel, :mail, :bio, :prestation, :lieu, :img, :mdp)',
             [
             'nom' => $data['nom'],
             'prenom' => $data['prenom'],
@@ -41,6 +41,7 @@ class CoachRepository extends Database
             'bio' => $data['bio'],
             'prestation' => $data['prestation'],
             'lieu' => $data['lieu'],
+            'img' => $data['img'],
             'mdp' => $data['mdp'],  
             ]
         );
@@ -85,7 +86,7 @@ class CoachRepository extends Database
             
 
         if ($query){
-            echo "Votre compte a bien été supprimé";
+        ?>    <div> <?php echo "Votre compte a bien été supprimé"; ?> </div> <?php  
         }
         else {
             "erreur";

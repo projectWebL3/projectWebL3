@@ -25,6 +25,11 @@ class Router
                     return $coachController->read((int) $_GET['id']);
                     
                 }
+                else if ('connexion' === $action )  {
+                  
+                    return $coachController->connexion();
+
+                }
                 else if ('read' === $action && !isset($_GET['id'])){
                     return $coachController->readAll();
                     
@@ -46,6 +51,11 @@ class Router
                     return $clientController->subcribe();
 
                 }
+                else if ('connexion' === $action )  {
+                  
+                    return $clientController->connexion();
+
+                }
                 else if ('update' === $action && isset($_GET['id']) )  {
               
                     return $clientController->update((int) $_GET['id']);
@@ -57,7 +67,8 @@ class Router
 
             } 
             else {
-            require_once 'index.php';
+                $this->view = new View();
+                $this->view->render('home');
             }
         }
      }

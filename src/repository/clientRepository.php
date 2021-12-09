@@ -5,6 +5,7 @@ namespace App\repository;
 use App\Database;
 use App\model\Client;
 
+
 class ClientRepository extends Database
 {
     public function getClient()
@@ -12,6 +13,24 @@ class ClientRepository extends Database
         $connection = (new Database())->getConnection();
 
         return $connection->query('SELECT * FROM client');
+    }
+    
+    public function connexion(array $data = [])
+    {
+        $sql='SELECT id FROM client WHERE Mail ="'.$data["mail"].'" AND mdp="'.$data["mdp"].'"';
+        $result = $this->checkConnection()->query($sql);
+        $t=$result->fetch() ;
+
+        if ($result){
+            echo "connecté";
+           $url ="http://localhost/projetMuscu/index.php?route=client&action=read&id=".$t["id"];
+           
+           header("Location: $url");
+        }
+        else {
+            "Echec";
+        }
+         
     }
 
     public function get(int $id)

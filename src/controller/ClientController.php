@@ -24,6 +24,15 @@ class ClientController
         
         $this->view->render('/client/subcribe');
     }
+    public function connexion()
+    {
+        if ('POST' === $_SERVER['REQUEST_METHOD']) {
+            $this->clientRepository->connexion($_POST);
+            
+        }
+        
+        $this->view->render('/client/connexion');
+    }
 
     
     public function read(int $id)

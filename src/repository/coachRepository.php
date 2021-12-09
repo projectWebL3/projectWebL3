@@ -29,7 +29,23 @@ class CoachRepository extends Database
     
         return $this->buildObject($result->fetch());
     }
+    public function connexion(array $data = [])
+    {
+        $sql='SELECT id FROM coach WHERE Mail ="'.$data["mail"].'" AND mdp="'.$data["mdp"].'"';
+        $result = $this->checkConnection()->query($sql);
+        $t=$result->fetch() ;
 
+        if ($result){
+            echo "connecté";
+           $url ="http://localhost/projetMuscu/index.php?route=coach&action=read&id=".$t["id"];
+           
+           header("Location: $url");
+        }
+        else {
+            "Echec";
+        }
+         
+    }
     public function subcribe(array $data = [])
     {
         $query = $this->createQuery(

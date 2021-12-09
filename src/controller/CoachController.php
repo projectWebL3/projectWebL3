@@ -44,6 +44,16 @@ class CoachController
 
     }
 
+    public function connexion()
+    {
+        if ('POST' === $_SERVER['REQUEST_METHOD']) {
+            $this->coachRepository->connexion($_POST);
+            
+        }
+        
+        $this->view->render('/coach/connexion');
+    }
+
     public function update(int $id)
     {
         if ('POST' === $_SERVER['REQUEST_METHOD']) {

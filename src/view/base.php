@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Blog MVC Miage</title>
+        <title>Trouver Votre Coach Sportif</title>
         <link rel="stylesheet" href="./assets/vendor/bootstrap-grid.min.css">
         <link rel="stylesheet" href="./assets/vendor/bootstrap.min.css">
     </head>

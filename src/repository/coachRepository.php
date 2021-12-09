@@ -9,9 +9,14 @@ class CoachRepository extends Database
 {
     public function getCoach()
     {
-        $connection = (new Database())->getConnection();
-
-        return $connection->query('SELECT * FROM coach');
+        $sql=('SELECT * FROM coach');
+        $result = $this->checkConnection()->query($sql);
+        $t=$result->fetchAll();
+        
+        return($t);
+        
+    
+        
     }
 
     public function get(int $id)
@@ -113,4 +118,6 @@ class CoachRepository extends Database
        
        return $coach;
    }
+
+  
 }

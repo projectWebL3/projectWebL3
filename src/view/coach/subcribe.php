@@ -9,8 +9,7 @@
 
 <form method="post"  action="index.php?route=coach&action=create">
    
-       
-    <div class="form-row">
+   
           <div class="for-row">
             <label for="validationDefault01">Prénom</label>
             <input type="text" class="form-control"  name="prenom"  value="prenom" required>
@@ -20,52 +19,48 @@
             <input type="text" class="form-control" name="nom"  value="nom" required>
           </div>
            <div class="form-row">
-            <label for="validationDefault02">Email</label>
+            <label for="validationDefault03">Email</label>
             <input type="text" class="form-control" name="mail"  required>
           </div> 
 
           <div class="form-row">
-    <label for="inputAddress">Telephone</label>
-    <input type="number" class="form-control" name="tel" >
+    <label for="validationDefault04">Telephone</label>
+    <input type="number" class="form-control" name="tel" required >
   </div>
 
   <div class="form-row">
-    <label for="inputAddress">Voie</label>
-    <input type="text" class="form-control" name="voie" >
+    <label for="validationDefault05">Voie</label>
+    <input type="text" class="form-control" name="voie" required>
   </div>
    <div class="form-row">
-    <label for="inputAddress">NVoie</label>
-    <input type="number" class="form-control" name="nRue" >
+    <label for="validationDefault06">NVoie</label>
+    <input type="number" class="form-control" name="nRue" required>
   </div>
   <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputCity">Code Postal</label>
-      <input type="number" class="form-control" name="codeP">
+      <label for="validationDefault07">Code Postal</label>
+      <input type="number" class="form-control" name="codeP" required>
     </div>
   <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputCity">City</label>
-      <input type="text" class="form-control" name="Ville">
+      <label  for="validationDefault08">Ville</label>
+      <input type="text" class="form-control" name="Ville" required>
     </div>
     <div class="form-row">
-    <label for="exampleFormControlTextarea1">Prestation</label>
-    <textarea class="form-control" name="prestation" rows="3"></textarea>
+    <label for="validationDefault09">Prestation</label>
+    <textarea class="form-control" name="prestation" rows="3" required></textarea>
   </div>
   <div class="form-row">
-    <label for="exampleFormControlTextarea1">Biographie</label>
-    <textarea class="form-control" name="bio" rows="3"></textarea>
+    <label for="validationDefault10">Biographie</label>
+    <textarea class="form-control" name="bio" rows="3" required></textarea>
   </div>
 
   <div class="form-row">
-      <label for="inputCity">Lieu</label>
-      <input type="text" class="form-control" name="lieu">
+      <label for="validationDefault11">Lieu</label>
+      <input type="text" class="form-control" name="lieu" required>
     </div>
 
-    <label for="inputPassword5">Password</label>
-<input type="password" name="mdp" class="form-control" aria-describedby="passwordHelpBlock">
-<small id="password" class="form-text text-muted">
-  Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
-</small>
+    <label for="inputPassword">Password</label>
+<input type="password" name="mdp" class="form-control" aria-describedby="passwordHelpBlock" required>
+
          
         </div>
 

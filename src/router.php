@@ -25,6 +25,10 @@ class Router
                     return $coachController->read((int) $_GET['id']);
                     
                 }
+                else if ('read' === $action && !isset($_GET['id'])){
+                    return $coachController->readAll();
+                    
+                }
                 else if ('delete' === $action && isset($_GET['id'])){
                     return $coachController->delete((int) $_GET['id']);
                     

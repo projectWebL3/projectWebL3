@@ -36,6 +36,14 @@ class CoachController
 
     }
 
+    public function readAll()
+    {
+        $this->view->render('/coach/read',[
+        'coach' => $this->coachRepository->getCoach() ]);
+     
+
+    }
+
     public function update(int $id)
     {
         if ('POST' === $_SERVER['REQUEST_METHOD']) {

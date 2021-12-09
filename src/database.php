@@ -21,7 +21,7 @@ abstract class Database
         }
     }
 
-    private function checkConnection(): \PDO
+    protected function checkConnection(): \PDO
     {
         if (null === $this->connection) {
             return $this->getConnection();

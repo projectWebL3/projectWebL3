@@ -37,13 +37,13 @@
 </nav>
 
     <body>
-        <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="p-5 mb-4 bg-light rounded-3" id="entete">
             <div class="container-fluid py-5">
-                <h1 >en tete </h1>
+           
                 
             </div>
         </div>
-         <h2 >CONTENU </h2>
+         
         <?=  $content ?>
 
         <footer>

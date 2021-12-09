@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="./assets/vendor/form.css">
 </head>
 </head>
-
+<h2 >Modifier mon adresse mail associée au compte</h2>
 <form method="post"  action="index.php?route=client&action=update&id=<?= $_GET['id'] ?>">
    
 

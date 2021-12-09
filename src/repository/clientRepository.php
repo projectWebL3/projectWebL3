@@ -21,14 +21,14 @@ class ClientRepository extends Database
         $result = $this->checkConnection()->query($sql);
         $t=$result->fetch() ;
 
-        if ($result){
+        if (!empty($t)){
             echo "connecté";
            $url ="http://localhost/projetMuscu/index.php?route=client&action=read&id=".$t["id"];
            
            header("Location: $url");
         }
         else {
-            "Echec";
+            echo "<script>alert(\"le mot de passe ou l'adresse mail est invalide , réessayez pu connectez vous!\")</script>";
         }
          
     }

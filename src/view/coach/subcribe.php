@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="./assets/vendor/form.css">
 </head>
 </head>
-
+<h2 >S'inscire comme Coach sportif</h2>
 <form method="post"  action="index.php?route=coach&action=create">
    
    

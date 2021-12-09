@@ -38,7 +38,7 @@ class CoachController
 
     public function readAll()
     {
-        $this->view->render('/coach/read',[
+        $this->view->render('/coach/readAll',[
         'coach' => $this->coachRepository->getCoach() ]);
      
 
@@ -69,7 +69,7 @@ class CoachController
     public function delete(int $id)
     {
             $this->coachRepository->delete($id);
-
+           
 
     }
     

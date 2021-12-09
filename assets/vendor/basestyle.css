@@ -1,4 +1,16 @@
 
 
+#entete{
+    background-image: url("grp.jpg");
+    background-size: 100%;
+}
 
+
+h2{
+    width: 800px; 
+    font-size: x-large ;
+    margin-left: auto; 
+    margin-right: auto;
+    padding : 30px;
+}
 

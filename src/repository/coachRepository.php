@@ -35,14 +35,15 @@ class CoachRepository extends Database
         $result = $this->checkConnection()->query($sql);
         $t=$result->fetch() ;
 
-        if ($result){
+        if (!empty($t)){
+            
             echo "connecté";
            $url ="http://localhost/projetMuscu/index.php?route=coach&action=read&id=".$t["id"];
            
            header("Location: $url");
         }
         else {
-            "Echec";
+            echo "<script>alert(\"le mote de passe ou l'adresse mail est invalide , réessayer pu connecter vous!\")</script>";
         }
          
     }
@@ -111,6 +112,9 @@ class CoachRepository extends Database
         else {
             "erreur";
         } 
+        $url ="http://localhost/projetMuscu/index.php?route=home";
+           
+        header("Location: $url");
     
     }
 

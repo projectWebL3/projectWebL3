@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="./assets/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/vendor/form.css">
 </head>
-
+<h2 >Se Connecter en tant que coach</h2>
 <form method="post" action="index.php?route=coach&action=connexion">
    
       

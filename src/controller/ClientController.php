@@ -57,6 +57,9 @@ class ClientController
     public function delete(int $id)
     {
             $this->clientRepository->delete($id);
+            $url ="http://localhost/projetMuscu/index.php?route=home";
+           
+            header("Location: $url");
 
 
     }

@@ -11,6 +11,10 @@ class Router
         if (isset($_GET['route'])) {
             $action = $_GET['action'] ?? null;
             $route = $_GET['route'];
+            if ('home'=== $route){
+                $this->view = new View();
+                $this->view->render('/home');
+            }
             if ('coach'=== $route && $action) {
                  $coachController = new CoachController();
                 if ('create' === $action){
@@ -67,8 +71,7 @@ class Router
 
             } 
             else {
-                $this->view = new View();
-                $this->view->render('home');
+                require_once 'index.php';
             }
         }
      }

@@ -16,19 +16,22 @@ class ClientRepository extends Database
     }
     
     public function connexion(array $data = [])
-    {
+    {  
+        
         $sql='SELECT id FROM client WHERE Mail ="'.$data["mail"].'" AND mdp="'.$data["mdp"].'"';
         $result = $this->checkConnection()->query($sql);
         $t=$result->fetch() ;
 
         if (!empty($t)){
-            echo "connecté";
-           $url ="http://localhost/projetMuscu/index.php?route=client&action=read&id=".$t["id"];
+        
+        echo "connecté";
+        $url ="http://localhost/projetMuscu/index.php?route=client&action=read&id=".$t["id"];
            
            header("Location: $url");
         }
         else {
-            echo "<script>alert(\"le mot de passe ou l'adresse mail est invalide , réessayez pu connectez vous!\")</script>";
+            echo "<script>alert(\"le mot de passe ou l'adresse mail est invalide , réessayez ou inscrivez vous!\")</script>";
+
         }
          
     }
@@ -43,6 +46,8 @@ class ClientRepository extends Database
     
         return $this->buildObject($result->fetch());
     }
+
+    
 
     public function subcribe(array $data = [])
     {

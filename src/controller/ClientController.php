@@ -18,6 +18,7 @@ class ClientController
     public function subcribe()
     {
         if ('POST' === $_SERVER['REQUEST_METHOD']) {
+            
             $this->clientRepository->subcribe($_POST);
             
         }
@@ -25,8 +26,13 @@ class ClientController
         $this->view->render('/client/subcribe');
     }
     public function connexion()
-    {
+    {   
+        
         if ('POST' === $_SERVER['REQUEST_METHOD']) {
+            if (empty($_POST["mail"])||empty($_POST["mdp"])){
+        echo "<script>alert(\"les informations entrées ne sont pas suffisants!\")</script>";
+        die;
+        }
             $this->clientRepository->connexion($_POST);
             
         }

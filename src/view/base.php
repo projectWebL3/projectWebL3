@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Trouver Votre Coach Sportif</title>
+        <title>Trouve tonCoach Sportif</title>
         <link rel="stylesheet" href="./assets/vendor/bootstrap-grid.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
         <link rel="stylesheet" href="./assets/vendor/bootstrap.min.css">
+        <link rel="stylesheet" href="./assets/vendor/footer.css">
         <link rel="stylesheet" href="./assets/vendor/basestyle.css">
     </head>
     
@@ -45,9 +48,27 @@
         </div>
          
         <?=  $content ?>
-
+</body>
         <footer>
-            FIN
+            <div class="footer-basic">
+        <footer>
+            <div class="social">
+                <a href="#"><i class="icon ion-social-instagram"></i></a>
+                <a href="#"><i class="icon ion-social-snapchat"></i></a>
+                <a href="#"><i class="icon ion-social-twitter"></i></a>
+                <a href="#"><i class="icon ion-social-facebook"></i></a>
+            </div>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="index.php?route=home">Home</a></li>
+                <li class="list-inline-item"><a href="#">Services</a></li>
+                <li class="list-inline-item"><a href="#">About</a></li>
+                <li class="list-inline-item"><a href="#">Terms</a></li>
+                <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+            </ul>
+            <p class="copyright">Trouve ton Coach © 2021</p>
         </footer>
-    </body>
+    </div>
+   
+        </footer>
+    
 </html>

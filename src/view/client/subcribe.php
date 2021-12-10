@@ -49,7 +49,7 @@
 
 
 
-  <button type="submit" class="btn btn-primary"  >S'inscrire</button>
+  <button type="submit" class="btn btn-dark">S'inscrire</button>
 
 </form>
 

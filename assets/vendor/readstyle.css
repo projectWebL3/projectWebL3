@@ -1,0 +1,13 @@
+span{
+
+    font-weight: bold;
+    color : grey;
+
+}
+h2{
+    width: 50%; 
+    font-size:  50px ;
+    margin-left: auto; 
+    margin-right: auto;
+    padding : 30px;
+}

@@ -1,0 +1,11 @@
+#card{
+    margin : 5px;
+}
+
+h2{
+    width: 800px; 
+    font-size:  60px ;
+    margin-left: auto; 
+    margin-right: auto;
+    padding : 30px;
+}

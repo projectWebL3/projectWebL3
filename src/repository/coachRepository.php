@@ -30,7 +30,8 @@ class CoachRepository extends Database
         return $this->buildObject($result->fetch());
     }
     public function connexion(array $data = [])
-    {
+    {   
+        
         $sql='SELECT id FROM coach WHERE Mail ="'.$data["mail"].'" AND mdp="'.$data["mdp"].'"';
         $result = $this->checkConnection()->query($sql);
         $t=$result->fetch() ;
@@ -43,12 +44,15 @@ class CoachRepository extends Database
            header("Location: $url");
         }
         else {
-            echo "<script>alert(\"le mote de passe ou l'adresse mail est invalide , réessayer pu connecter vous!\")</script>";
+            echo "<script>alert(\"le mot de passe ou l'adresse mail est invalide , réessayer ou connectez vous!\")</script>";
         }
          
     }
+
+    
+
     public function subcribe(array $data = [])
-    {
+    {    
         $query = $this->createQuery(
        'INSERT INTO coach (nom, prenom, nRue, voie, codeP, Ville, tel, mail, bio, prestation, lieu, mdp) VALUES (:nom, :prenom, :nRue, :voie, :codeP, :Ville, :tel, :mail, :bio, :prestation, :lieu, :mdp)',
             [
@@ -73,9 +77,12 @@ class CoachRepository extends Database
         else {
             "Echec lors de l'inscription";
         } 
+    }
+
+    
     
        
-    }
+    
 
     public function update( array $data = [])
     {

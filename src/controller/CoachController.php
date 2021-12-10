@@ -19,6 +19,7 @@ class CoachController
     public function subcribe()
     {
         if ('POST' === $_SERVER['REQUEST_METHOD']) {
+            
             $this->coachRepository->subcribe($_POST);
             
         }
@@ -45,8 +46,13 @@ class CoachController
     }
 
     public function connexion()
-    {
+    {  
+        
         if ('POST' === $_SERVER['REQUEST_METHOD']) {
+            if (empty($_POST["mail"])||empty($_POST["mdp"])){
+        echo "<script>alert(\"les informations entrées ne sont pas suffisants!\")</script>";
+        die;
+        }
             $this->coachRepository->connexion($_POST);
             
         }

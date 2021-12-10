@@ -4,14 +4,14 @@ namespace App\model;
 Class Client{
 
     private $id;
-    private $nom;
-    private $prenom;
-    private $nRue;
-    private $voie;
-    private $ville;
-    private $codeP;
-    private $mdp;
-    private $mail;
+    public $nom;
+    public $prenom;
+    public $nRue;
+    public $voie;
+    public $ville;
+    public $codeP;
+    public $mdp;
+    public $mail;
     
     
     public function getNom(){

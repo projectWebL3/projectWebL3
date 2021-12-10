@@ -16,7 +16,7 @@
     <textarea class="form-control" name="prestation" rows="3"></textarea>
   </div>
 
-  <button type="submit" class="btn btn-primary">Modifier</button>
+  <button type="submit" class="btn btn-dark">Modifier</button>
 
 </form>
 

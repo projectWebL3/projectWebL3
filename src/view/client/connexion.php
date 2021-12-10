@@ -19,7 +19,7 @@
 <input type="password" id="mdp" name="mdp" class="form-control" aria-describedby="passwordHelpBlock"required>
 
 
-
-  <button type="submit" class="btn btn-primary"> Se connecter</button>
-
+<div class="form-row">
+  <button type="submit" class="btn btn-dark"> Se connecter</button>
+  </div> 
 </form>

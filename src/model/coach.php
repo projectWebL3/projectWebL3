@@ -5,18 +5,18 @@ class Coach {
 
 
     private $id;
- private $nom;
- private $prenom;
- private $nRue;
- private $voie;
- private $codeP;
- private $ville;
- private $tel;
- private $mail;
- private $bio;
- private $prest;
- private $lieu;
- private $mdp;
+ public $nom;
+ public $prenom;
+ public $nRue;
+ public $voie;
+ public $codeP;
+ public $ville;
+ public $tel;
+ public $mail;
+ public $bio;
+ public $prest;
+ public $lieu;
+ public $mdp;
 
 
 

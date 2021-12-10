@@ -50,7 +50,17 @@ class ClientRepository extends Database
     
 
     public function subcribe(array $data = [])
-    {
+    {   $sql='SELECT Mail FROM client WHERE mail ="'.$data["mail"].'" ';
+        $result = $this->checkConnection()->query($sql);
+
+    if (!empty($result->fetch())){
+            echo "E-mail déjà enregistré.";
+        }
+        else if (strpos($data["mail"], "@") == false && (strpos($data["mail"], ".fr")== false || strpos($data["mail"], ".fr") == false)){
+            echo "E-mail non conforme.";
+        }
+
+        else{
         $query = $this->createQuery(
        'INSERT INTO client ( nom, prenom, nRue, Ville, voie, codeP, mdp, mail) VALUES (:nom, :prenom, :nRue, :Ville, :voie, :codeP, :mdp, :mail)',
             [
@@ -74,6 +84,7 @@ class ClientRepository extends Database
         else {
             "Echec lors de l'inscription";
         } 
+    }
     
        
     }

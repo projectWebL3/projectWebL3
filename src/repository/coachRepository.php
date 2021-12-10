@@ -39,7 +39,7 @@ class CoachRepository extends Database
         if (!empty($t)){
             
             echo "connecté";
-           $url ="http://localhost/projetMuscu/index.php?route=coach&action=read&id=".$t["id"];
+           $url =  $url ="http://localhost/projetMuscu/index.php?route=coach&action=read&id=".$t["id"];
            
            header("Location: $url");
         }
@@ -52,7 +52,17 @@ class CoachRepository extends Database
     
 
     public function subcribe(array $data = [])
-    {    
+    {    $sql='SELECT Mail FROM coach WHERE Mail ="'.$data["mail"].'" ';
+        $result = $this->checkConnection()->query($sql);
+
+    if (!empty($result->fetch())){
+            echo "E-mail déjà enregistré.";
+        }
+        else if (strpos($data["mail"], "@") == false && (strpos($data["mail"], ".fr")== false || strpos($data["mail"], ".fr") == false)){
+            echo "E-mail non conforme.";
+        }
+
+        else{
         $query = $this->createQuery(
        'INSERT INTO coach (nom, prenom, nRue, voie, codeP, Ville, tel, mail, bio, prestation, lieu, mdp) VALUES (:nom, :prenom, :nRue, :voie, :codeP, :Ville, :tel, :mail, :bio, :prestation, :lieu, :mdp)',
             [
@@ -77,6 +87,7 @@ class CoachRepository extends Database
         else {
             "Echec lors de l'inscription";
         } 
+    }
     }
 
     

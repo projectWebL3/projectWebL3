@@ -54,10 +54,10 @@ class ClientRepository extends Database
         $result = $this->checkConnection()->query($sql);
 
     if (!empty($result->fetch())){
-            echo "E-mail déjà enregistré.";
+            echo "<script>alert(\"E-mail déjà enregistré.\")</script>";
         }
         else if (strpos($data["mail"], "@") == false && (strpos($data["mail"], ".fr")== false || strpos($data["mail"], ".fr") == false)){
-            echo "E-mail non conforme.";
+            echo "<script>alert(\"E-mail non conforme.\")</script>";
         }
 
         else{
@@ -79,10 +79,10 @@ class ClientRepository extends Database
         
 
         if ($query){
-            echo "Votre inscription est enregistrée";
+            echo "<script>alert(\"Votre inscription est enregistrée\")</script>";
         }
         else {
-            "Echec lors de l'inscription";
+             echo "<script>alert(\"Echec lors de l'inscription\")</script>";
         } 
     }
     
@@ -102,10 +102,10 @@ class ClientRepository extends Database
         
 
         if ($query){
-            echo "la modification a bien été enregistrée";
+            echo "<script>alert(\"la modification a bien été enregistrée\")</script>";
         }
         else {
-            "Echec lors de la modification";
+            echo "<script>alert(\"Echec lors de la modification\")</script>";
         } 
     
        
@@ -121,10 +121,10 @@ class ClientRepository extends Database
             
 
         if ($query){
-            echo "Votre compte a bien été supprimé";
+             echo "<script>alert(\"Votre compte a bien été supprimé\")</script>";
         }
         else {
-            "erreur";
+             echo "<script>alert(\"erreur\")</script>";
         } 
     
     }

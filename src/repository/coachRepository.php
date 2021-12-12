@@ -50,16 +50,17 @@ class CoachRepository extends Database
     }
 
     
+        
 
     public function subcribe(array $data = [])
     {    $sql='SELECT Mail FROM coach WHERE Mail ="'.$data["mail"].'" ';
         $result = $this->checkConnection()->query($sql);
 
     if (!empty($result->fetch())){
-            echo "E-mail déjà enregistré.";
+            echo "<script>alert(\"E-mail déjà enregistré\")</script>";
         }
         else if (strpos($data["mail"], "@") == false && (strpos($data["mail"], ".fr")== false || strpos($data["mail"], ".fr") == false)){
-            echo "E-mail non conforme.";
+            echo "<script>alert(\"E-mail non conforme.\")</script>";
         }
 
         else{
@@ -82,10 +83,10 @@ class CoachRepository extends Database
         );
 
         if ($query){
-            echo "Votre inscription est enregistrée";
+            echo "<script>alert(\"Votre inscription est enregistrée\")</script>";
         }
         else {
-            "Echec lors de l'inscription";
+            echo "<script>alert(\"Echec lors de l'inscription\")</script>";
         } 
     }
     }
@@ -106,10 +107,10 @@ class CoachRepository extends Database
         );
 
         if ($query){
-            echo "la modification a bien été enregistrée";
+            echo "<script>alert(\"la modification a bien été enregistrée\")</script>";
         }
         else {
-            "Echec lors de la modification";
+            echo "<script>alert(\"Echec lors de la modification\")</script>";
         } 
     
        
@@ -125,10 +126,10 @@ class CoachRepository extends Database
             
 
         if ($query){
-            echo "Votre compte a bien été supprimé";
+            echo "<script>alert(\"Votre compte a bien été supprimé\")</script>";
         }
         else {
-            "erreur";
+            echo "<script>alert(\"erreur\")</script>";
         } 
         $url ="http://localhost/projetMuscu/index.php?route=home";
            
@@ -142,7 +143,7 @@ class CoachRepository extends Database
         $coach->setId((int) $row['id']);
         $coach->setNom( $row['nom']);
         $coach->setPrenom( $row['prenom']);
-        $coach->setNrue( $row['nom']);
+        $coach->setNrue( $row['nRue']);
         $coach->setVoie( $row['voie']);
         $coach->setCodeP( $row['codeP']);
         $coach->setVille( $row['Ville']);
